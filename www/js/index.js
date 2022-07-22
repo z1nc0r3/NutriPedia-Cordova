@@ -17,10 +17,18 @@ if (localStorage.getItem("theme") === "theme-dark") {
 function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
+
+    if (button.classList.contains('light-icon') && themeName == 'theme-dark') {
+        button.classList.toggle('light-icon');
+        button.classList.toggle('dark-icon');
+    } else if (button.classList.contains('dark-icon') && themeName == 'theme-light') {
+        button.classList.toggle('light-icon');
+        button.classList.toggle('dark-icon');
+    }
+
 }
 
 function toggleTheme() {
-    button.innerHTML = 'hell';
     if (localStorage.getItem("theme") === "theme-dark") {
         setTheme("theme-light");
     } else {

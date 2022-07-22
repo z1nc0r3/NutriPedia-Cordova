@@ -106,5 +106,6 @@ body {
 /* Landscape layout */
 @media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
     .app {
+        /* todo */
     }
 }

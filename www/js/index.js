@@ -51,7 +51,7 @@ function performSearch() {
         url: "https://calorieninjas.p.rapidapi.com/v1/nutrition?query=tomato",
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": "7795701e29msh045cee6ff0afd4ep1560b9jsn3ebc3aa4fb6a",
+            "X-RapidAPI-Key": apiKey,
             "X-RapidAPI-Host": "calorieninjas.p.rapidapi.com",
         },
     };

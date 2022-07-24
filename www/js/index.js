@@ -5,7 +5,6 @@
 // }
 
 let button = document.getElementById("theme-button");
-
 button.addEventListener('click', toggleTheme);
 
 if (localStorage.getItem("theme") === "theme-dark") {

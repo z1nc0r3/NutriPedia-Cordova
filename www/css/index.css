@@ -1,23 +1,32 @@
 .theme-light {
-    --color-primary: #ffffff;
-    --color-secondary: #00ff80;
-    --color-accent: #0acc03;
+    --color-primary: #f1f1f1;
+    --color-secondary: #79ffbc;
+    --color-accent: #07be01;
     --font-color: #000000;
     --font-color-hover: #1b1b1b;
     --color-opposite: #111111;
+    --color-border: #00000050;
+    --color-pure: white;
+
     --icon-url: url("../img/icon/theme-dark.png");
     --logo-url: url("../img/icon/logo-dark.png");
+    --icon-search: url("../img/icon/search-dark.png");
+    
 }
 
 .theme-dark {
-    --color-primary: #111111;
-    --color-secondary: #1b1b1b;
+    --color-primary: #0a0a0a;
+    --color-secondary: #111111;
     --color-accent: #07be01;
     --font-color: #ffffff;
     --font-color-hover: #dbdbdb;
     --color-opposite: #f0f0f0;
+    --color-border: #ffffff50;
+    --color-pure: black;
+    
     --icon-url: url("../img/icon/theme-light.png");
     --logo-url: url("../img/icon/logo-light.png");
+    --icon-search: url("../img/icon/search-light.png");
 }
 
 * {
@@ -60,8 +69,8 @@ body {
 .container-main {
     height: 80%;
     width: 85%;
-    min-width: 280px;
-    background-color: var(--color-primary);
+    min-width: 350px;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 
     border-radius: 20px;
 
@@ -78,6 +87,11 @@ body {
     height: 68px;
 
     padding-left: 53px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid var(--color-border);
+
+    background-color: var(--color-pure);
 }
 
 .header-logo {
@@ -89,7 +103,7 @@ body {
     margin-right: auto;
 }
 
-.container-main .btn {
+.container-header .btn {
     width: 38px;
     height: 38px;
     color: var(--font-color);
@@ -108,18 +122,72 @@ body {
     border: 1px solid var(--color-opposite);
 }
 
-.container-main .btn:hover {
+.container-header .btn:hover {
     opacity: 1;
 }
 
-.container-main .btn:focus {
+.container-header .btn:focus {
     outline: none;
     box-shadow: none;
 }
 
-/* Landscape layout */
-@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
-    .app {
-        /* todo */
+.container-search {
+    height: 90px;
+    width: 85%;
+    background-color: var(--color-primary);
+
+    margin: auto;
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+
+.container-search #search-bar {
+    height: 58%;
+    width: 90%;
+    background-color: var(--color-pure);
+    font-size: 20px;
+    caret-color: var(--color-border);
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    padding-bottom: 13px;
+
+    transition: 0.2s;
+}
+
+.container-search #search-bar:focus {
+    outline: none;
+    box-shadow: 1px 1px 8px var(--color-border);
+}
+
+.container-search #search-button {
+    height: 58%;
+    width: 20%;
+    background: var(--icon-search) no-repeat center;
+    background-color: var(--color-accent);
+
+    background-size: 35px 35px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+
+    transition: 0.1s;
+}
+
+.container-search #search-button:active {
+    background-size: 32px 32px;
+}
+
+.container-search #search-button:focus {
+    outline: none;
+}
+
+/* STYLE FOR LANDSCAPE VIEW */
+
+@media screen and (min-width:400px) {
+    .container-main {
+        max-width: 600px;
     }
 }

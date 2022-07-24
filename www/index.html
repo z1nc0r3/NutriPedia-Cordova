@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>NutriPedia</title>
         <meta charset="utf-8" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"/>
+            content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+        />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta
-            name="viewport"
-            content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
         <meta name="color-scheme" content="light dark" />
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <title>NutriPedia</title>
+        <script src="js/jquery-3.6.0.min.js"></script>
     </head>
+
     <body>
         <div class="app">
             <div class="overlay"></div>
             <div class="container-main d-flex flex-column">
+                <!-- Header with Logo and theme toggler -->
                 <div class="container-header d-flex flex-row justify-content-between">
                     <div class="header-logo align-self-center"></div>
-                    <button
-                        class="btn align-self-center"
-                        id="theme-button"
-                    ></button>
+                    <button class="btn align-self-center" id="theme-button"></button>
                 </div>
+
+                <!-- Search bar -->
+                <div class="container-search d-flex flex-row align-items-center">
+                    <input type="text" id="search-bar" placeholder="Enter food name." />
+                    <button id="search-button"></button>
+                </div>
+                <!-- <span id="result"> i'm here.</span> -->
             </div>
         </div>
         <script src="js/index.js"></script>

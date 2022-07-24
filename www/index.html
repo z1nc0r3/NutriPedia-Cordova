@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta
             http-equiv="Content-Security-Policy"
-            content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"
+            content="script-src 'self' https://reqres.in 'unsafe-inline' 'unsafe-eval';"
         />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -32,9 +32,12 @@
                     <button id="search-button"></button>
                 </div>
                 <!-- <span id="result"> i'm here.</span> -->
+                <div class="result d-flex flex-column overflow-hidden">
+                    
+                </div>
             </div>
         </div>
         <script src="js/index.js"></script>
-        <script src="cordova.js"></script>
+        <!-- <script src="cordova.js"></script> -->
     </body>
 </html>

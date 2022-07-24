@@ -20,6 +20,11 @@
         <div class="app">
             <div class="overlay"></div>
             <div class="container-main d-flex flex-column">
+                <div id="error">
+                    <div id="error-message">
+                        Error occured
+                    </div>
+                </div>
                 <!-- Header with Logo and theme toggler -->
                 <div class="container-header d-flex flex-row justify-content-between">
                     <div class="header-logo align-self-center"></div>
@@ -32,11 +37,10 @@
                     <button id="search-button"></button>
                 </div>
                 <!-- <span id="result"> i'm here.</span> -->
-                <div class="result d-flex flex-column overflow-hidden">
-                    
-                </div>
+                <div class="result d-flex flex-column align-items-center" id="result"></div>
             </div>
         </div>
+
         <script src="js/index.js"></script>
         <!-- <script src="cordova.js"></script> -->
     </body>

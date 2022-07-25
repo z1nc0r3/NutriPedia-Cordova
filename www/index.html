@@ -33,11 +33,13 @@
 
                 <!-- Search bar -->
                 <div class="container-search d-flex flex-row align-items-center">
-                    <input type="text" id="search-bar" placeholder="Enter food name." />
+                    <input type="text" id="search-bar" placeholder="Enter food name." value="apple"/>
                     <button id="search-button"></button>
                 </div>
                 <!-- <span id="result"> i'm here.</span> -->
-                <div class="result d-flex flex-column align-items-center" id="result"></div>
+                <div class="result d-flex flex-column align-items-center scrollbar" id="result">
+                    <div class="result-view force-overflow"></div>
+                </div>
             </div>
         </div>
 

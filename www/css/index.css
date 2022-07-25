@@ -2,6 +2,7 @@
     --color-primary: #f1f1f1;
     --color-secondary: #79ffbc;
     --color-accent: #07be01;
+    --color-scroll: #07be017a;
     --font-color: #000000;
     --font-color-hover: #1b1b1b;
     --color-opposite: #111111;
@@ -229,25 +230,65 @@ body {
     overflow-y: auto;
     overflow-x: auto;
     
-    background-color: #000000;
+    background-color: transparent;
     transition: .5s;
 }
 
 .result .item {
-    min-height: 70px;
+    min-height: 50px;
     width: 100%;
-    /* background-color: #202020; */
     padding: 0px 30px 10px 30px;
+    margin: 3px 0px;
     font-size: 21px;
 
-    /* border-radius: 15px; */
+    background-color: #ffffff01;
+    border-radius: 10px;
 }
 
+#name {
+    font-weight: 500;
+}
+
+/* Scrollbar style */
+
+#result::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: var(--color-pure);
+}
+
+#result::-webkit-scrollbar
+{
+    width: 5px;
+}
+
+#result::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: var(--color-accent);
+}
 
 /* STYLE FOR LANDSCAPE VIEW */
 
 @media screen and (min-width:400px) {
+    #result::-webkit-scrollbar-track
+    {
+        border-radius: 10px;
+        background-color: var(--color-pure);
+    }
+    
+    #result::-webkit-scrollbar
+    {
+        width: 5px;
+    }
+    
+    #result::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: var(--color-accent);
+    }
     .container-main {
         max-width: 600px;
     }
 }
+

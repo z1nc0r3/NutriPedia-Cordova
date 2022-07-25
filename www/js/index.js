@@ -78,7 +78,7 @@ function processResponse(response) {
     }
 
     for (var [key, value] of Object.entries(object)) {
-        if (key != "name") {
+        if (key != "name" || key != "serving_size_g") {
             element += `
             <div class="item d-flex float-right justify-content-between align-items-center">
                 <span id="name">${key}</span>
@@ -88,7 +88,7 @@ function processResponse(response) {
     }
 
     console.log(element);
-    $(".result").html(element);
+    $(".result-view").html(element);
 
     result.style.height = "550px";
 }

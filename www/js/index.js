@@ -61,8 +61,6 @@ function performSearch() {
     } else {
         settings.url = `https://calorieninjas.p.rapidapi.com/v1/nutrition?query=${input}`;
         $.ajax(settings).done(function (response) {
-            console.log(response);
-            // $('.result').html(JSON.stringify(response));
             processResponse(response);
         });
     }
@@ -78,7 +76,7 @@ function processResponse(response) {
     }
 
     for (var [key, value] of Object.entries(object)) {
-        if (key != "name" || key != "serving_size_g") {
+        if (key != "name" && key != "serving_size_g") {
             element += `
             <div class="item d-flex float-right justify-content-between align-items-center">
                 <span id="name">${key}</span>
@@ -87,10 +85,9 @@ function processResponse(response) {
         }
     }
 
-    console.log(element);
     $(".result-view").html(element);
 
-    result.style.height = "550px";
+    result.style.height = "75%";
 }
 
 function toast() {

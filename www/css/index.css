@@ -102,7 +102,7 @@ body {
 }
 
 .container-main {
-    height: 80%;
+    height: 85%;
     width: 80%;
     min-width: 350px;
     background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
@@ -166,15 +166,23 @@ body {
     box-shadow: none;
 }
 
+.container-body {
+    height: 100%;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    overflow: auto;
+}
+
 .container-search {
     height: 90px;
+    min-height: 80px;
     width: 85%;
     background-color: var(--color-secondary);
 
     position: relative;
     margin: auto;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-    /* bottom: 35px; */
+    
     border-radius: 20px;
     padding: 0px 20px;
 }
@@ -192,7 +200,7 @@ body {
     padding: 10px;
     padding-bottom: 13px;
 
-    transition: 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .container-search #search-bar:focus {
@@ -224,42 +232,51 @@ body {
 
 .result {
     height: 0px;
-    width: 100%;
-
-    overflow: scroll;
-    overflow-y: auto;
+    width: 85%;
     overflow-x: auto;
     
-    background-color: transparent;
-    transition: .5s;
+    background-color: #223322;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    transition: height .5s;
+}
+
+.result-view {
+    padding: 0px 10px;
 }
 
 .result .item {
-    min-height: 50px;
+    min-height: 45px;
     width: 100%;
-    padding: 0px 30px 10px 30px;
     margin: 3px 0px;
+    padding: 0px 5px;
+
     font-size: 21px;
 
-    background-color: #ffffff01;
     border-radius: 10px;
 }
 
-#name {
-    font-weight: 500;
+.result #name {
+    font-weight: 400;
 }
 
+.result #amount {
+    font-weight: 600;
+}
+
+
 /* Scrollbar style */
+
+#result::-webkit-scrollbar
+{
+    width: 4px;
+}
 
 #result::-webkit-scrollbar-track
 {
     border-radius: 10px;
-    background-color: var(--color-pure);
-}
-
-#result::-webkit-scrollbar
-{
-    width: 5px;
+    background-color: transparent;
 }
 
 #result::-webkit-scrollbar-thumb
@@ -267,6 +284,18 @@ body {
     border-radius: 10px;
     background-color: var(--color-accent);
 }
+
+#result::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 30px; 
+}
+
+#result::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 20px;
+}
+
+
 
 /* STYLE FOR LANDSCAPE VIEW */
 

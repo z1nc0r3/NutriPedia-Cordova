@@ -15,7 +15,7 @@ search_button.addEventListener("click", performSearch);
 
 document.addEventListener("food_not_found_error", () => {
     error_message.innerHTML = "Food or Drink not found.";
-    console.log('log');
+    console.log("log");
     toast();
 });
 document.addEventListener("empty_search_bar_error", () => {
@@ -67,8 +67,23 @@ function performSearch() {
 }
 
 function processResponse(response) {
+    const items = [
+        "Sugar",
+        "Fiber",
+        "Sodium",
+        "Potassium",
+        "Fat (Saturated)",
+        "Fat (Total)",
+        "Calories",
+        "Cholesterol",
+        "Protein",
+        "Carbohydrates (Total)",
+    ];
+    const measure = ["g", "g", "g", "mg", "g", "g", "cal", "mg", "g", "g"];
+
     let element = "";
     let object = response["items"][0];
+    let i = 0;
 
     if (object == null) {
         document.dispatchEvent(new Event("food_not_found_error"));
@@ -77,11 +92,16 @@ function processResponse(response) {
 
     for (var [key, value] of Object.entries(object)) {
         if (key != "name" && key != "serving_size_g") {
+            key = items[i];
+            value += ` ${measure[i]}`;
+
             element += `
             <div class="item d-flex float-right justify-content-between align-items-center">
                 <span id="name">${key}</span>
                 <span id="amount">${value}</span>
             </div>`;
+            
+            i++;
         }
     }
 
@@ -97,7 +117,6 @@ function toast() {
         error.style.opacity = "0";
     }, 2500);
 }
-
 
 /* 
 <div class="item d-flex float-right justify-content-between align-items-center">

@@ -169,7 +169,6 @@ body {
 .container-body {
     height: 100%;
     width: 100%;
-    padding: 10px 0px 0px 0px;
     overflow: auto;
 }
 
@@ -230,20 +229,24 @@ body {
     outline: none;
 }
 
+/* result card */
+
 .result {
     height: 0px;
     width: 85%;
     overflow-x: auto;
     
-    background-color: #223322;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    background-color: #1f1f1f70;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 
     transition: height .5s;
 }
 
 .result-view {
-    padding: 0px 10px;
+    padding: 5px 15px;
 }
 
 .result .item {
@@ -253,12 +256,10 @@ body {
     padding: 0px 5px;
 
     font-size: 21px;
-
-    border-radius: 10px;
 }
 
 .result #name {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .result #amount {
@@ -292,7 +293,7 @@ body {
 
 #result::-webkit-scrollbar-track-piece:start {
     background: transparent;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 
